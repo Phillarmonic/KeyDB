@@ -30,6 +30,21 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PAT }}
 
+      - name: Build and push v6 (Alpine variants)
+        uses: docker/build-push-action@v5
+        with:
+          context: docker
+          platforms: linux/amd64,linux/arm64
+          file: docker/alpine/Dockerfile
+          push: true
+          tags: |
+            phillarmonicsoftware/keydb:latest
+            phillarmonicsoftware/keydb:6-alpine
+            phillarmonicsoftware/keydb:6.3-alpine
+          build-args: |
+            BRANCH=v6.3.4
+            GOSU_VERSION=1.17
+
       - name: Build and push v6 (Debian variants)
         uses: docker/build-push-action@v5
         with:
@@ -45,17 +60,3 @@ jobs:
             BRANCH=v6.3.4
             GOSU_VERSION=1.17
 
-      - name: Build and push v6 (Alpine variants)
-        uses: docker/build-push-action@v5
-        with:
-          context: docker
-          platforms: linux/amd64,linux/arm64
-          file: docker/alpine/Dockerfile
-          push: true
-          tags: |
-            phillarmonicsoftware/keydb:latest
-            phillarmonicsoftware/keydb:6-alpine
-            phillarmonicsoftware/keydb:6.3-alpine
-          build-args: |
-            BRANCH=v6.3.4
-            GOSU_VERSION=1.17
