@@ -13,4 +13,18 @@ You can check out Snap's repository at:
 
 
 
-# 
+## Multiplatform driven
+
+All the images in this repository are built for both ARM and AMD64.
+
+## Image naming strategy
+
+Default linux is Alpine. A Bookworm variant is also available.
+
+| Description    | OS       | Tag          |
+| -------------- | -------- | ------------ |
+| Latest release | Alpine   | latest       |
+| Major version  | Alpine   | 6            |
+| Major version  | Bookworm | 6-bookworm   |
+| Minor version  | Alpine   | 6.3          |
+| Minor version  | Bookworm | 6.3-bookworm |
