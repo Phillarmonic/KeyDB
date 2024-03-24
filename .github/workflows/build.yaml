@@ -8,7 +8,7 @@ on:
         type: choice
         description: "Choose the OS to build the Docker images on"
         options:
-          - ubuntu-22.04
+          - ubuntu-latest
           - macos-12
 
 env:
@@ -16,7 +16,7 @@ env:
   DOCKER_PAT: ${{ secrets.DOCKER_PAT }}
 jobs:
   build-and-push:
-    runs-on: [self-hosted, "${{ inputs.chosen-os }}"]
+    runs-on: ["${{ inputs.chosen-os }}"]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
