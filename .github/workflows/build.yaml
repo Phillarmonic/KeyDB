@@ -31,7 +31,6 @@ jobs:
           dockerfile: docker/debian/Dockerfile
           push: true
           tags: |
-            phillarmonicsoftware/keydb:latest
             phillarmonicsoftware/keydb:6
             phillarmonicsoftware/keydb:6.3
             phillarmonicsoftware/keydb:6.3-bookworm
@@ -47,6 +46,7 @@ jobs:
           dockerfile: docker/alpine/Dockerfile
           push: true
           tags: |
+            phillarmonicsoftware/keydb:latest
             phillarmonicsoftware/keydb:6-alpine
             phillarmonicsoftware/keydb:6.3-alpine
           build-args: |
