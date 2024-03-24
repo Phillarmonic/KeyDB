@@ -17,7 +17,7 @@ You can check out Snap's repository at:
 
 All the images in this repository are built for both ARM and AMD64.
 
-## Image naming strategy
+## Image tagging strategy
 
 Default linux is Alpine. A Bookworm variant is also available.
 
